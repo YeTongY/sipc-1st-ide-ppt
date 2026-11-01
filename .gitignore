@@ -11,3 +11,6 @@ ide-training/
 # 本地预览脚本产物
 dist/.vite/
 .DS_Store
+
+# GitHub Pages 用的子路径产物（CI 里现场构建，不提交）
+dist-pages/

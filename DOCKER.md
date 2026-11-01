@@ -14,6 +14,24 @@
 | `nginx.conf` | SPA 回退（`/3`、`/12` 这类路由）、静态资源长缓存、gzip、`/healthz` |
 | `.dockerignore` | 排除 `node_modules/`、`ide-training/`、`*.bak` 等，构建上下文只剩 ~5 MB |
 | `docker-compose.yml` | 起服务用，端口 8099 |
+| `README.md` | 仓库首页说明 |
+| `.github/workflows/pages.yml` | GitHub Pages 构建 + 部署 |
+
+## GitHub Pages
+
+仓库已开启 Pages（Source = **GitHub Actions**），地址：
+
+<https://yetongy.github.io/sipc-1st-ide-ppt/>
+
+要点：项目页挂在子路径 `/sipc-1st-ide-ppt/` 下，而 `dist/` 里的资源是绝对根路径 `/assets/...`（给 Docker / Coolify 用），**两者不能共用一份产物**。所以 Pages 由 [.github/workflows/pages.yml](.github/workflows/pages.yml) 在 CI 里重新构建，带 `--base /sipc-1st-ide-ppt/`，输出到 `dist-pages/`（已 gitignore，不入库）。
+
+- 改 `slides.md` → push → 自动重新部署；也可以在 Actions 页面手动 `Run workflow`。
+- 深链接（如 `/sipc-1st-ide-ppt/7`）依赖 Slidev 生成的 `404.html`：它和 `index.html` 是同一份 app shell，Pages 对未知路径返回它（404 状态码），前端路由接管后正常显示那一页。这也是为什么 `dist/_redirects` 之外还需要它。
+- 本地复现 Pages 效果：
+
+  ```bash
+  pnpm exec slidev build --base /sipc-1st-ide-ppt/ --out dist-pages
+  ```
 
 ## 部署到 Coolify
 
