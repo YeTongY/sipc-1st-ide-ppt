@@ -1,0 +1,13 @@
+services:
+  ppt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: c-ide-training-ppt:latest
+    container_name: c-ide-training-ppt
+    # 沿用原来 run.sh 里的 8099 端口习惯
+    ports:
+      - "8099:80"
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai

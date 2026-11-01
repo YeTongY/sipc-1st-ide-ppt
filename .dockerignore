@@ -1,0 +1,17 @@
+# 构建上下文只留静态产物，避免把 539MB 的 node_modules 传给 docker daemon
+node_modules/
+**/node_modules/
+ide-training/
+public/
+components/
+styles/
+slides.md
+*.bak
+**/*.bak
+pnpm-lock.yaml
+package.json
+Dockerfile
+docker-compose.yml
+.dockerignore
+DOCKER.md
+.git/

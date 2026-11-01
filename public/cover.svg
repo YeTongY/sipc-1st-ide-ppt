@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#05080c"/>
+      <stop offset="0.55" stop-color="#080d13"/>
+      <stop offset="1" stop-color="#04070a"/>
+    </linearGradient>
+
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4ec5d4" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#2b90b6" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#2b90b6" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#146b8c" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#146b8c" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="edge" x1="0" y1="0" x2="1920" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4ec5d4" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4ec5d4" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#4ec5d4" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" stroke="#4ec5d4" stroke-opacity="0.075" stroke-width="1" fill="none"/>
+    </pattern>
+
+    <pattern id="gridBig" width="256" height="256" patternUnits="userSpaceOnUse">
+      <path d="M256 0H0V256" stroke="#4ec5d4" stroke-opacity="0.13" stroke-width="1" fill="none"/>
+    </pattern>
+
+    <linearGradient id="fadeMask" x1="0" y1="0" x2="0" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="0.75" stop-color="#fff" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+
+    <mask id="fade">
+      <rect width="1920" height="1080" fill="url(#fadeMask)"/>
+    </mask>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#base)"/>
+
+  <g mask="url(#fade)">
+    <rect width="1920" height="1080" fill="url(#gridBig)"/>
+    <rect width="1920" height="1080" fill="url(#grid)"/>
+  </g>
+
+  <ellipse cx="1560" cy="90" rx="820" ry="560" fill="url(#glowA)"/>
+  <ellipse cx="220" cy="1010" rx="700" ry="480" fill="url(#glowB)"/>
+
+  <!-- 背景二进制流 -->
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="20" fill="#4ec5d4" fill-opacity="0.14" mask="url(#fade)">
+    <text x="120" y="240">01101001 01101110 01110100</text>
+    <text x="120" y="284">01100110 01101111 01110010</text>
+    <text x="120" y="328">01110011 01100011 01100001</text>
+    <text x="1520" y="700">01101110 01100110 00100101</text>
+    <text x="1520" y="744">01110011 01110101 01101101</text>
+    <text x="1520" y="788">01100001 01110010 01110010</text>
+    <text x="640" y="960">01100011 01101111 01100100</text>
+  </g>
+
+  <!-- 顶部与底部青色光线 -->
+  <rect x="0" y="0" width="1920" height="2" fill="url(#edge)" opacity="0.9"/>
+  <rect x="0" y="1078" width="1920" height="2" fill="url(#edge)" opacity="0.5"/>
+
+  <!-- 左侧竖排刻度 -->
+  <g stroke="#4ec5d4" stroke-opacity="0.28" stroke-width="2">
+    <line x1="64" y1="430" x2="64" y2="470"/>
+    <line x1="64" y1="500" x2="64" y2="540"/>
+    <line x1="64" y1="570" x2="64" y2="610"/>
+  </g>
+
+  <!-- 右下角终端提示符 -->
+  <g font-family="JetBrains Mono, Consolas, monospace" font-size="22" fill="#4ec5d4" fill-opacity="0.5">
+    <text x="120" y="1010">$ gcc hello.c -o hello</text>
+  </g>
+
+  <!-- 暗角 -->
+  <rect width="1920" height="1080" fill="url(#base)" opacity="0.18"/>
+</svg>

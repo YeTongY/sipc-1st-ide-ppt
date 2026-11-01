@@ -1,0 +1,13 @@
+# 依赖与构建副产品：539MB，绝不能进仓库
+node_modules/
+**/node_modules/
+
+# 另一份课件副本（含 PDF），本仓库不需要
+ide-training/
+
+# 旧的样式/组件备份
+*.bak
+
+# 本地预览脚本产物
+dist/.vite/
+.DS_Store
