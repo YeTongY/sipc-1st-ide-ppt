@@ -17,21 +17,16 @@ css: unocss
   
 </div>
 
-<h1
-  v-motion
-  :initial="{ opacity: 0, scale: 0.95 }"
-  :enter="{ opacity: 1, scale: 1, transition: { duration: 600, delay: 150 } }"
->
-  C语言开发环境与工具链解析
-</h1>
+<div class="flex items-center justify-between gap-8 mt-8">
+  <div class="flex-1">
+    <h1 v-motion :initial="{ opacity: 0, scale: 0.95 }" :enter="{ opacity: 1, scale: 1, transition: { duration: 600, delay: 150 } }">C语言开发环境与工具链解析</h1>
+    <div v-motion :initial="{ opacity: 0, y: 15 }" :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }" class="text-xl text-gray-500 dark:text-gray-400 mt-2 font-medium">编译原理、调试机制与工程实践</div>
+  </div>
 
-<div
-  v-motion
-  :initial="{ opacity: 0, y: 15 }"
-  :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 300 } }"
-  class="text-xl text-gray-500 dark:text-gray-400 mt-2 font-medium"
->
-  编译原理、调试机制与工程实践
+  <div class="flex flex-col items-center gap-2 shrink-0" v-motion :initial="{ opacity: 0, x: 15 }" :enter="{ opacity: 1, x: 0, transition: { duration: 600, delay: 450 } }">
+    <img src="/course-ppt-qr.svg" alt="课件 PPT 二维码" class="w-40 h-40 rounded-xl bg-white p-2 shadow-lg" />
+    <div class="text-sm font-bold text-gray-600 dark:text-gray-300">课件 PPT</div>
+  </div>
 </div>
 
 
@@ -711,8 +706,14 @@ transition: slide-left
   <ul class="text-xs text-gray-600 dark:text-gray-300 space-y-1.5 list-disc list-inside leading-relaxed">
     <li><b>学校邮箱</b>：用 <code>.edu.cn</code> 等被认可域名的邮箱申请，审核最快</li>
     <li><b>官方证明文件</b>：没有学校邮箱时，上传学生证 / 在读证明，或学信网《教育部学籍在线验证报告》</li>
-    <li>入口：JetBrains 官网 → Community → <b>Students and teachers</b></li>
   </ul>
+  <div class="mt-3 flex items-center gap-3 rounded-lg bg-white/80 dark:bg-gray-900/60 p-2 border border-blue-100 dark:border-blue-800/60">
+    <img src="/student-pack-qr.svg" alt="JetBrains 学生包申请二维码" class="w-20 h-20 shrink-0 rounded bg-white" />
+    <div class="text-[11px] leading-relaxed text-gray-600 dark:text-gray-300">
+      <div class="font-bold text-blue-700 dark:text-blue-300 mb-1">扫码直达申请页面</div>
+      JetBrains 官网 → Community → <b>Students and teachers</b>
+    </div>
+  </div>
 </div>
 
 <div v-click class="border border-emerald-200 dark:border-emerald-800 rounded-xl p-4 bg-emerald-50/50 dark:bg-emerald-950/30 transition-all duration-300 hover:-translate-y-1 shadow-sm">
